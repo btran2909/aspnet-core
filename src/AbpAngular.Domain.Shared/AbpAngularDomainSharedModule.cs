@@ -17,6 +17,7 @@ using Volo.Abp.VirtualFileSystem;
 using Volo.Saas;
 using Volo.Abp.BlobStoring.Database;
 using Volo.CmsKit;
+using Volo.FileManagement;
 
 namespace AbpAngular
 {
@@ -35,6 +36,7 @@ namespace AbpAngular
         typeof(CmsKitProDomainSharedModule),
         typeof(BlobStoringDatabaseDomainSharedModule)
         )]
+    [DependsOn(typeof(FileManagementDomainSharedModule))]
     public class AbpAngularDomainSharedModule : AbpModule
     {
         public override void PreConfigureServices(ServiceConfigurationContext context)

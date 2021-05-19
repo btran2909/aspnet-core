@@ -23,6 +23,7 @@ using Volo.Abp.BlobStoring.Database;
 using Volo.CmsKit;
 using Volo.CmsKit.Contact;
 using Volo.CmsKit.Newsletters;
+using Volo.FileManagement;
 
 namespace AbpAngular
 {
@@ -45,6 +46,7 @@ namespace AbpAngular
         typeof(CmsKitProDomainModule),
         typeof(BlobStoringDatabaseDomainModule)
         )]
+    [DependsOn(typeof(FileManagementDomainModule))]
     public class AbpAngularDomainModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)

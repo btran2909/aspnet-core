@@ -4,6 +4,7 @@ using AbpAngular.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Volo.Abp.EntityFrameworkCore;
 using Volo.Abp.MultiTenancy;
@@ -11,9 +12,10 @@ using Volo.Abp.MultiTenancy;
 namespace AbpAngular.Migrations
 {
     [DbContext(typeof(AbpAngularMigrationsDbContext))]
-    partial class AbpAngularMigrationsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210518102125_Added_FileManagement_Module_32562")]
+    partial class Added_FileManagement_Module_32562
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

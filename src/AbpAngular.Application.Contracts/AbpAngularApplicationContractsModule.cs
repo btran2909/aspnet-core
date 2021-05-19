@@ -1,4 +1,4 @@
-﻿using Volo.Abp.Account;
+using Volo.Abp.Account;
 using Volo.Abp.AuditLogging;
 using Volo.Abp.FeatureManagement;
 using Volo.Abp.Identity;
@@ -11,6 +11,7 @@ using Volo.Abp.SettingManagement;
 using Volo.Abp.TextTemplateManagement;
 using Volo.Saas.Host;
 using Volo.CmsKit;
+using Volo.FileManagement;
 
 namespace AbpAngular
 {
@@ -30,6 +31,7 @@ namespace AbpAngular
         typeof(CmsKitProApplicationContractsModule),
         typeof(TextTemplateManagementApplicationContractsModule)
     )]
+    [DependsOn(typeof(FileManagementApplicationContractsModule))]
     public class AbpAngularApplicationContractsModule : AbpModule
     {
 

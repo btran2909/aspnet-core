@@ -24,6 +24,7 @@
     <PackageReference Include="Volo.Abp.Identity.Pro.Domain" Version="4.3.0" />
     <PackageReference Include="Volo.Abp.LanguageManagement.Domain" Version="4.3.0" />
     <PackageReference Include="Volo.Abp.LeptonTheme.Management.Domain" Version="4.3.0" />
+    <PackageReference Include="Volo.FileManagement.Domain" Version="4.3.0" />
     <PackageReference Include="Volo.Saas.Domain" Version="4.3.0" />
     <PackageReference Include="Volo.Abp.TextTemplateManagement.Domain" Version="4.3.0" />
     <PackageReference Include="Volo.CmsKit.Pro.Domain" Version="4.3.0" />

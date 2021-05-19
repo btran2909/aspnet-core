@@ -1,4 +1,4 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Volo.Abp.Account;
 using Volo.Abp.AuditLogging;
@@ -15,6 +15,7 @@ using Volo.Abp.SettingManagement;
 using Volo.Abp.TextTemplateManagement;
 using Volo.Saas.Host;
 using Volo.CmsKit;
+using Volo.FileManagement;
 
 namespace AbpAngular
 {
@@ -35,6 +36,7 @@ namespace AbpAngular
         typeof(CmsKitProApplicationModule),
         typeof(TextTemplateManagementApplicationModule)
         )]
+    [DependsOn(typeof(FileManagementApplicationModule))]
     public class AbpAngularApplicationModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)

@@ -12,6 +12,7 @@ using Volo.Abp.TextTemplateManagement.EntityFrameworkCore;
 using Volo.Saas.EntityFrameworkCore;
 using Volo.Abp.BlobStoring.Database.EntityFrameworkCore;
 using Volo.CmsKit.EntityFrameworkCore;
+using Volo.FileManagement.EntityFrameworkCore;
 
 namespace AbpAngular.EntityFrameworkCore
 {
@@ -52,6 +53,7 @@ namespace AbpAngular.EntityFrameworkCore
             /* Configure your own tables/entities inside the ConfigureAbpAngular method */
 
             builder.ConfigureAbpAngular();
+            builder.ConfigureFileManagement();
         }
     }
 }

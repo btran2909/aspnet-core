@@ -1,4 +1,4 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection;
 using Volo.Abp.Account;
 using Volo.Abp.AuditLogging;
 using Volo.Abp.FeatureManagement;
@@ -12,6 +12,7 @@ using Volo.Abp.TextTemplateManagement;
 using Volo.Abp.SettingManagement;
 using Volo.Saas.Host;
 using Volo.CmsKit;
+using Volo.FileManagement;
 
 namespace AbpAngular
 {
@@ -31,6 +32,7 @@ namespace AbpAngular
         typeof(CmsKitProHttpApiClientModule),
         typeof(TextTemplateManagementHttpApiClientModule)
     )]
+    [DependsOn(typeof(FileManagementHttpApiClientModule))]
     public class AbpAngularHttpApiClientModule : AbpModule
     {
         public const string RemoteServiceName = "Default";

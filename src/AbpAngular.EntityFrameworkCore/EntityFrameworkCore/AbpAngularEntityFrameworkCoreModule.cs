@@ -1,3 +1,6 @@
+using AbpAngular.Customers;
+using AbpAngular.Customers;
+using AbpAngular.Companies;
 using Microsoft.Extensions.DependencyInjection;
 using Volo.Abp.AuditLogging.EntityFrameworkCore;
 using Volo.Abp.BackgroundJobs.EntityFrameworkCore;
@@ -47,6 +50,12 @@ namespace AbpAngular.EntityFrameworkCore
                 /* Remove "includeAllEntities: true" to create
                  * default repositories only for aggregate roots */
                 options.AddDefaultRepositories(includeAllEntities: true);
+                options.AddRepository<company, Companies.EfCorecompanyRepository>();
+
+                options.AddRepository<customer, Customers.EfCorecustomerRepository>();
+
+                options.AddRepository<customer, Customers.EfCorecustomerRepository>();
+
             });
 
             Configure<AbpDbContextOptions>(options =>

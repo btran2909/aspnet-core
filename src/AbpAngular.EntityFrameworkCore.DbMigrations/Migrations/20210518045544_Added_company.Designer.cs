@@ -4,6 +4,7 @@ using AbpAngular.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Volo.Abp.EntityFrameworkCore;
 using Volo.Abp.MultiTenancy;
@@ -11,9 +12,10 @@ using Volo.Abp.MultiTenancy;
 namespace AbpAngular.Migrations
 {
     [DbContext(typeof(AbpAngularMigrationsDbContext))]
-    partial class AbpAngularMigrationsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210518045544_Added_company")]
+    partial class Added_company
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -81,93 +83,6 @@ namespace AbpAngular.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Appcompanies");
-                });
-
-            modelBuilder.Entity("AbpAngular.Customers.customer", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Address")
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("Address");
-
-                    b.Property<string>("City")
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("City");
-
-                    b.Property<string>("ConcurrencyStamp")
-                        .IsConcurrencyToken()
-                        .HasMaxLength(40)
-                        .HasColumnType("nvarchar(40)")
-                        .HasColumnName("ConcurrencyStamp");
-
-                    b.Property<string>("Country")
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("Country");
-
-                    b.Property<DateTime>("CreationTime")
-                        .HasColumnType("datetime2")
-                        .HasColumnName("CreationTime");
-
-                    b.Property<Guid?>("CreatorId")
-                        .HasColumnType("uniqueidentifier")
-                        .HasColumnName("CreatorId");
-
-                    b.Property<Guid?>("DeleterId")
-                        .HasColumnType("uniqueidentifier")
-                        .HasColumnName("DeleterId");
-
-                    b.Property<DateTime?>("DeletionTime")
-                        .HasColumnType("datetime2")
-                        .HasColumnName("DeletionTime");
-
-                    b.Property<string>("Email")
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("Email");
-
-                    b.Property<string>("ExtraProperties")
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("ExtraProperties");
-
-                    b.Property<bool>("IsDeleted")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasDefaultValue(false)
-                        .HasColumnName("IsDeleted");
-
-                    b.Property<DateTime?>("LastModificationTime")
-                        .HasColumnType("datetime2")
-                        .HasColumnName("LastModificationTime");
-
-                    b.Property<Guid?>("LastModifierId")
-                        .HasColumnType("uniqueidentifier")
-                        .HasColumnName("LastModifierId");
-
-                    b.Property<DateTime>("LicenseExpired")
-                        .HasColumnType("datetime2")
-                        .HasColumnName("LicenseExpired");
-
-                    b.Property<string>("LicenseNo")
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("LicenseNo");
-
-                    b.Property<string>("Telephone")
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("Telephone");
-
-                    b.Property<string>("Website")
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("Website");
-
-                    b.Property<string>("ZipCode")
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("ZipCode");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Appcustomers");
                 });
 
             modelBuilder.Entity("Volo.Abp.AuditLogging.AuditLog", b =>

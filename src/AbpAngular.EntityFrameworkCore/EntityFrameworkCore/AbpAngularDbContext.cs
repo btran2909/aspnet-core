@@ -1,3 +1,9 @@
+using Volo.Abp.EntityFrameworkCore.Modeling;
+using Microsoft.EntityFrameworkCore;
+using AbpAngular.Customers;
+using Volo.Abp.EntityFrameworkCore.Modeling;
+using Microsoft.EntityFrameworkCore;
+using AbpAngular.Companies;
 using Microsoft.EntityFrameworkCore;
 using AbpAngular.Users;
 using Volo.Abp.Data;
@@ -20,6 +26,8 @@ namespace AbpAngular.EntityFrameworkCore
     [ConnectionStringName("Default")]
     public class AbpAngularDbContext : AbpDbContext<AbpAngularDbContext>
     {
+        public DbSet<customer> customers { get; set; }
+        public DbSet<company> companies { get; set; }
         public DbSet<AppUser> Users { get; set; }
 
         /* Add DbSet properties for your Aggregate Roots / Entities here.

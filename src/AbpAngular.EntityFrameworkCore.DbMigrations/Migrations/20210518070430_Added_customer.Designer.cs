@@ -4,6 +4,7 @@ using AbpAngular.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Volo.Abp.EntityFrameworkCore;
 using Volo.Abp.MultiTenancy;
@@ -11,9 +12,10 @@ using Volo.Abp.MultiTenancy;
 namespace AbpAngular.Migrations
 {
     [DbContext(typeof(AbpAngularMigrationsDbContext))]
-    partial class AbpAngularMigrationsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210518070430_Added_customer")]
+    partial class Added_customer
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -154,7 +156,8 @@ namespace AbpAngular.Migrations
                         .HasColumnName("LicenseNo");
 
                     b.Property<string>("Telephone")
-                        .HasColumnType("nvarchar(max)")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(1)")
                         .HasColumnName("Telephone");
 
                     b.Property<string>("Website")
